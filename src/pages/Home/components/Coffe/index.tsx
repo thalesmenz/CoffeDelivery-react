@@ -1,5 +1,5 @@
 import { ShoppingCart } from "phosphor-react";
-import { ButtonCounter, ButtonCounterneg, ContainerBuy, ContainerCartAndCounter, ContainerCoffe, ContainerImg, ContainerPreco, Counter, H1, Img, P1, Preco, Rs, Texts } from "./styles";
+import { Abuy, ButtonCounter, ButtonCounterneg, ContainerBuy, ContainerCartAndCounter, ContainerCoffe, ContainerImg, ContainerPreco, Counter, H1, Img, P1, Preco, Rs, Texts } from "./styles";
 
 interface coffeProps {
     h1: string
@@ -28,7 +28,9 @@ export function Coffe({ h1, p, img }: coffeProps) {
                         1
                     <ButtonCounter>+</ButtonCounter>
                 </Counter>
-                <ShoppingCart />
+                <Abuy>
+                    <ShoppingCart />
+                </Abuy>
                 </ContainerCartAndCounter>
             </ContainerBuy>
         </ContainerCoffe>

@@ -5,6 +5,7 @@ display: block;
 width: 12rem;
 background: ${props => props.theme.card};
 margin-top: 2rem;
+padding-bottom: 0.5rem;
 `
 
 export const Img = styled.img`
@@ -91,6 +92,17 @@ export const ContainerCartAndCounter = styled.div`
     display: flex;
     gap: 0.5rem;
     align-items: center;
+`
+
+export const Abuy = styled.a`
+    width: 1.8rem;
+    height: 1.8rem;
+    background: ${props => props.theme["purple-dark"]};
+    color:  ${props => props.theme.white};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 `
 
 

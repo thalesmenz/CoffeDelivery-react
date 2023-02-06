@@ -5,7 +5,6 @@ import { Coffes } from "./components/Coffes";
 export function Home() {
     return (
         <> 
-          <Header />
           <Brand />
           <Coffes />
         </>

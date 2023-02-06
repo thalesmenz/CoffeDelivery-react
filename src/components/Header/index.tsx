@@ -13,7 +13,11 @@ export function Header() {
                 <MapPin size={24} />
                     Leme, SP
                 </Localizacao>
-                <ShoppingCart size={24} />
+                <a href="/payment">
+                    <span>
+                        <ShoppingCart size={20} />
+                    </span>
+                </a>
             </ContainerLocalizacaoBuy>
 
         </HeaderContainer>

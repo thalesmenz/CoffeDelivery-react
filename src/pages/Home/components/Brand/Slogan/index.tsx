@@ -1,26 +1,34 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
-import { ContainerDivsText, Divs, P } from "./styles";
+import { Abox, ACaffe, Arelogio, Ashopping, ContainerDivsText, Divs, P } from "./styles";
 
 export function Slogan() {
     return (
         <ContainerDivsText>
             <Divs>
                 <P>
-                <ShoppingCart size={20} />
+                <Ashopping href="">
+                    <ShoppingCart size={20} />
+                </Ashopping>
                     Compra simples e segura
                 </P>
                 <P>
-                <Timer size={20} />
+                <Arelogio>
+                    <Timer size={20} />
+                </Arelogio>
                     Entrega rápida e rastreada
                 </P>
             </Divs>
             <Divs>
                 <P>
-                <Package size={20} />
+                    <Abox>
+                        <Package size={20} />
+                    </Abox>
                     Embalagem mantém o café intacto
                 </P>
                 <P>
-                    <Coffee size={20} />
+                    <ACaffe>
+                        <Coffee size={20} />
+                    </ACaffe>
                     O café chega fresquinho até você
                 </P>
             </Divs>

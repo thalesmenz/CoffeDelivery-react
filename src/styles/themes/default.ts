@@ -1,5 +1,5 @@
 export const defaultTheme = {
-   ' white': '#FFF',
+   'white': '#FFF',
   
     'background': '#FAFAFA',
     'card': '#F3F2F2',
@@ -17,5 +17,5 @@ export const defaultTheme = {
 
     'yellow-dark': '#C47F17',
     'yellow': '#DBAC2C',
-    'yellow-light': 'F1E9C9',
+    'yellow-light': '#F1E9C9',
   }

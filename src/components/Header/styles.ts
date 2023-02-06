@@ -6,6 +6,15 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
+
+    a {
+        height: 2rem;
+        width: 2rem;
+        color:  ${props => props.theme['yellow-dark']};
+        background: ${props => props.theme['yellow-light']};
+        padding: 0.3rem;
+        border-radius: 6px;
+    }
 `
 
 export const Localizacao = styled.div`
@@ -13,6 +22,8 @@ export const Localizacao = styled.div`
     color: ${props => props.theme['purple-dark']};
     font-family: 'Roboto', sans-serif;
     padding: 0.3rem;
+    padding-right: 0.5rem;
+    border-radius: 8px;
     display: flex;
 ` 
 
