@@ -1,7 +1,11 @@
+import { ConfirmRequest } from "./components/ConfirmRequest";
+import { FormEndereco } from "./components/FormEntrega";
+
 export function Payment() {
     return (
         <div>
-            pagamento
+            <FormEndereco />
+            <ConfirmRequest />
         </div>
     )
 }
