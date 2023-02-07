@@ -103,6 +103,7 @@ export const Abuy = styled.a`
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    cursor: pointer;
 `
 
 
