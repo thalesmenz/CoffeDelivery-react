@@ -6,7 +6,7 @@ export function Slogan() {
         <ContainerDivsText>
             <Divs>
                 <P>
-                <Ashopping href="">
+                <Ashopping>
                     <ShoppingCart size={20} />
                 </Ashopping>
                     Compra simples e segura
