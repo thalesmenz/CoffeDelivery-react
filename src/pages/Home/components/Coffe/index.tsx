@@ -1,13 +1,41 @@
 import { ShoppingCart } from "phosphor-react";
+import {  useState, useContext } from "react";
+import { AmountOfCoffes } from "../../../../contexts/AmountOfCoffes";
 import { Abuy, ButtonCounter, ButtonCounterneg, ContainerBuy, ContainerCartAndCounter, ContainerCoffe, ContainerImg, ContainerPreco, Counter, H1, Img, P1, Preco, Rs, Texts } from "./styles";
 
 interface coffeProps {
     h1: string
     p: string
-    img?: string
+    img: string
 }
 
+
 export function Coffe({ h1, p, img }: coffeProps) {
+
+    const { CoffesinCart, setCoffesinCart, setCoffesinListForBuy, CoffesinListForBuy } = useContext(AmountOfCoffes)
+
+    const [NumbersOfCoffes, setNumbersOfCoffes] = useState(0)
+
+    function subtrair() {
+        if(NumbersOfCoffes > 0) {
+            setNumbersOfCoffes(NumbersOfCoffes - 1)
+        }
+    }
+
+    function addItemCart() {
+        setCoffesinCart({
+            img: img,
+            p:p,
+            h1:h1,
+            NumbersOfCoffes: NumbersOfCoffes
+        })
+        
+            setCoffesinListForBuy([...CoffesinListForBuy, CoffesinCart])
+
+        }
+        console.log(CoffesinListForBuy)
+    
+
     return (
         <ContainerCoffe>
             <ContainerImg>
@@ -24,11 +52,13 @@ export function Coffe({ h1, p, img }: coffeProps) {
                 </ContainerPreco>
                 <ContainerCartAndCounter>
                 <Counter>
-                    <ButtonCounterneg>_</ButtonCounterneg>
-                        1
-                    <ButtonCounter>+</ButtonCounter>
+                    <ButtonCounterneg onClick={subtrair}>_</ButtonCounterneg>
+                       <p>{NumbersOfCoffes}</p> 
+                    <ButtonCounter onClick={() => {
+                        setNumbersOfCoffes(NumbersOfCoffes + 1)
+                    }}>+</ButtonCounter>
                 </Counter>
-                <Abuy>
+                <Abuy onClick={addItemCart}>
                     <ShoppingCart />
                 </Abuy>
                 </ContainerCartAndCounter>

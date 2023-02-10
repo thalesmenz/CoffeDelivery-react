@@ -93,7 +93,7 @@ export const ContainerCartAndCounter = styled.div`
     align-items: center;
 `
 
-export const Abuy = styled.a`
+export const Abuy = styled.button`
     width: 1.8rem;
     height: 1.8rem;
     background: ${props => props.theme["purple-dark"]};
@@ -102,6 +102,7 @@ export const Abuy = styled.a`
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    border: none;
     cursor: pointer;
 `
 

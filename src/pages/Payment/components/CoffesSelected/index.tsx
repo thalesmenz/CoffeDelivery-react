@@ -1,10 +1,23 @@
+import { useContext } from "react";
+import { AmountOfCoffes } from "../../../../contexts/AmountOfCoffes";
 import { CoffeBuy } from "../CoffeBuy/CoffeBuy";
 import { ContainerCoffeSelected, P1, P2 } from "./styles";
 
 export function CoffesSelected() {
+
+    const { CoffesinListForBuy } = useContext(AmountOfCoffes)
+
     return (
         <>     
-        <CoffeBuy />
+        {CoffesinListForBuy.map(item => {
+            console.log(item.h1)
+            return (
+                <CoffeBuy 
+                img={item.img} 
+                h1={item.h1}
+                NumbersOfCoffes={item.NumbersOfCoffes}  />
+            )
+        })}
         <ContainerCoffeSelected>
             <div>
                 <P2>Total de itens</P2>

@@ -95,7 +95,7 @@ export function ListCoffes() {
         <ContainerListCoffe>
             {listCoffes.map(item => {
                 return (
-                    <Coffe img={item.img} h1={item.h1} p={item.p} />
+                    <Coffe img={item.img} h1={item.h1} p={item.p} key={item.h1} />
                 )
             })}
         </ContainerListCoffe>

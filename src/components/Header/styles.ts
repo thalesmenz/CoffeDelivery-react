@@ -14,6 +14,21 @@ export const HeaderContainer = styled.div`
         background: ${props => props.theme['yellow-light']};
         padding: 0.3rem;
         border-radius: 6px;
+
+       p {
+        width: 1.2rem;
+        height: 1.2rem;
+        position: absolute;
+        margin-left: 1rem;
+        margin-top: -0.8rem;
+        background:  ${props => props.theme['yellow-dark']};
+        color:  ${props => props.theme.white};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 13px;
+       } 
     }
 `
 
