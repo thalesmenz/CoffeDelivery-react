@@ -1,7 +1,13 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
+import { useContext } from "react";
+import { AmountOfCoffes } from "../../../../contexts/AmountOfCoffes";
+import { FormContext } from "../../../../contexts/FormContext";
 import { ContainerButton, ContainerConfirmRequest, ContainerP } from "./styles";
 
 export function ConfirmRequest() {
+
+    const {setPagamento} = useContext(FormContext)
+
     return (
         <ContainerConfirmRequest>
             <ContainerP>
@@ -14,19 +20,21 @@ export function ConfirmRequest() {
                     <p>O Pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
             </ContainerP>
             <ContainerButton>
-                <button>
+                <button onClick={() => setPagamento('Cartão de Credito')}>
                     <span>
                         <CreditCard size={20} />
                         <p>CARTÃO DE CREDITO</p>
                     </span>
                     </button>
-                <button>
+                <button onClick={() => setPagamento('Cartão de Débito')}>
                     <span>
                         <Bank size={20} /> 
                         <p>CARTÃO DE DÉBITO</p>
                     </span>
                 </button>
-                <button>
+                <button onClick={() => {
+                    setPagamento('Dinheiro')
+                }}>
                     <span>
                         <Money size={20} /> 
                         <p>DINHEIRO</p> 

@@ -15,7 +15,7 @@ export const ContainerImg = styled.div`
     margin-left: 2.25rem;
 `
 
-export const Texts = styled.h1`
+export const Texts = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

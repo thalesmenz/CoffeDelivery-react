@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
  background: ${props => props.theme.background};
- margin: 0rem 12.2rem 2rem 12.2rem
+ margin: 0rem 7rem 2rem 7rem
 };
 
 border-style, input, text-area, button, p {

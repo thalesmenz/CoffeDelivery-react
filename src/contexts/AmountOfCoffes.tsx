@@ -5,10 +5,10 @@ interface AmountOfCoffesProviderProps {
 }
 
 interface AmountOfCoffesContextType {
-    CoffesinCart: CoffesinCartProps
-    setCoffesinCart: (value: CoffesinCartProps) => void
     CoffesinListForBuy: CoffesinCartProps[]
     setCoffesinListForBuy: (value: CoffesinCartProps[]) => void
+    AmountPricesCoffes: number[]
+    setAmountPricesCoffes: (value: number[]) => void
 }
 
 interface CoffesinCartProps {
@@ -22,13 +22,19 @@ export const AmountOfCoffes = createContext({} as AmountOfCoffesContextType)
 
 export function AmountOfCoffesProvider({ children }: AmountOfCoffesProviderProps) {    
 
-    const [CoffesinCart, setCoffesinCart] = useState<CoffesinCartProps>({} as CoffesinCartProps)
+    const [CoffesinListForBuy, setCoffesinListForBuy] = useState<CoffesinCartProps[]>([])
 
-    const [CoffesinListForBuy, setCoffesinListForBuy] = useState<CoffesinCartProps[]>([] as CoffesinCartProps[])
+    const [AmountPricesCoffes, setAmountPricesCoffes] = useState<number[]>([])
 
 
     return (
-      <AmountOfCoffes.Provider value={{CoffesinCart, setCoffesinCart, setCoffesinListForBuy, CoffesinListForBuy}}>
+      <AmountOfCoffes.Provider 
+      value={{ 
+      setCoffesinListForBuy, 
+      CoffesinListForBuy, 
+      setAmountPricesCoffes,
+      AmountPricesCoffes
+      }}>
             {children}
       </AmountOfCoffes.Provider>
     )

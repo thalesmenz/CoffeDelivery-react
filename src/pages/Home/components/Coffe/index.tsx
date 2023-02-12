@@ -2,6 +2,8 @@ import { ShoppingCart } from "phosphor-react";
 import {  useState, useContext } from "react";
 import { AmountOfCoffes } from "../../../../contexts/AmountOfCoffes";
 import { Abuy, ButtonCounter, ButtonCounterneg, ContainerBuy, ContainerCartAndCounter, ContainerCoffe, ContainerImg, ContainerPreco, Counter, H1, Img, P1, Preco, Rs, Texts } from "./styles";
+import { toast } from 'react-toastify' ;   
+import 'react-toastify/dist/ReactToastify.min.css' ; 
 
 interface coffeProps {
     h1: string
@@ -12,7 +14,11 @@ interface coffeProps {
 
 export function Coffe({ h1, p, img }: coffeProps) {
 
-    const { CoffesinCart, setCoffesinCart, setCoffesinListForBuy, CoffesinListForBuy } = useContext(AmountOfCoffes)
+    const { setCoffesinListForBuy, 
+            CoffesinListForBuy, 
+            setAmountPricesCoffes,
+            AmountPricesCoffes
+            } = useContext(AmountOfCoffes)
 
     const [NumbersOfCoffes, setNumbersOfCoffes] = useState(0)
 
@@ -23,18 +29,27 @@ export function Coffe({ h1, p, img }: coffeProps) {
     }
 
     function addItemCart() {
-        setCoffesinCart({
+        const coffe = {
             img: img,
             p:p,
             h1:h1,
-            NumbersOfCoffes: NumbersOfCoffes
-        })
-        
-            setCoffesinListForBuy([...CoffesinListForBuy, CoffesinCart])
-
+            NumbersOfCoffes: NumbersOfCoffes,
         }
-        console.log(CoffesinListForBuy)
+
+        setCoffesinListForBuy([...CoffesinListForBuy, coffe])
+        
+        calcPriceCoffe(NumbersOfCoffes)
+
+        toast.success("Seu item foi adicionado ao carrinho com sucesso", {
+            position: toast.POSITION.TOP_LEFT
+        })
+    }
     
+    function calcPriceCoffe(AmountCoffes: number) {
+        const priceCoffe = 9.90 * AmountCoffes
+        
+        setAmountPricesCoffes([...AmountPricesCoffes, priceCoffe])
+    }
 
     return (
         <ContainerCoffe>

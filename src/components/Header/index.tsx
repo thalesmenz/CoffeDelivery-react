@@ -22,7 +22,7 @@ export function Header() {
                 <NavLink to="/payment" title="Carrinho de compras">
                     <span>
                         <>
-                        {CoffesinListForBuy.length != 0 ? <p>{CoffesinListForBuy.length}</p> : console.log('oi') }
+                        {CoffesinListForBuy.length != 0 ? <p>{CoffesinListForBuy.length}</p> : null }
                         </>
                         <ShoppingCart size={20} />
                     </span>

@@ -1,8 +1,16 @@
 import { ContainerSuccess, ContainerTitle, P1, ContainerInfos, Img, ContainerText, Arelogio, Adollar, AmapPin } from "./styles";
 import MotoBoy from './../../assets/MotoBoy.svg'
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { useContext } from "react";
+import { FormContext } from "../../contexts/FormContext";
 
 export function Success() {
+
+    const {
+        infos
+    } = useContext(FormContext)
+
+
     return (
         <ContainerSuccess>
             <div>
@@ -25,10 +33,10 @@ export function Success() {
                 </AmapPin>
                     <div>
                         <p>
-                            Entrega em Rua João Daniel Martinelli, 102
+                            Entrega em <strong>{infos.rua}, {infos.numero}</strong> 
                         </p>
                         <p>
-                            Farrapos - Porto Alegre, RS
+                            {infos.bairro} - {infos.cidade} {infos.uf}
                         </p>
                     </div>
 
@@ -43,7 +51,7 @@ export function Success() {
                             Previsão de entrega 
                         </p>
                         <p>
-                            20 - 30 min
+                           <strong>20 - 30 min</strong> 
                         </p> 
                     </div>
                 </ContainerText>
@@ -57,7 +65,7 @@ export function Success() {
                                 Pagamento na entrega
                             </p>
                             <p>
-                                Cãrtão de Crédito
+                                <strong>{infos.pagamento}</strong>
                             </p>
                         </div> 
                     </ContainerText>
