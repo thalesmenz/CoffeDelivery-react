@@ -29,7 +29,8 @@ export function Coffe({ h1, p, img }: coffeProps) {
     }
 
     function addItemCart() {
-        const coffe = {
+        if(NumbersOfCoffes) {
+            const coffe = {
             img: img,
             p:p,
             h1:h1,
@@ -43,6 +44,11 @@ export function Coffe({ h1, p, img }: coffeProps) {
         toast.success("Seu item foi adicionado ao carrinho com sucesso", {
             position: toast.POSITION.TOP_LEFT
         })
+        } else {
+            toast.error("Escolha uma quantidade de cafés válida", {
+                position: toast.POSITION.TOP_LEFT
+            })
+        }
     }
     
     function calcPriceCoffe(AmountCoffes: number) {
